@@ -62,7 +62,7 @@ jobs:
     runs-on: ${{ matrix.os }}-latest
     if: needs.setup.outputs.skip_tests == 'false'
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         include: ${{fromJSON(needs.setup.outputs.tests)}}
 
